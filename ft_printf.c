@@ -6,7 +6,7 @@
 /*   By: mwubneh <mwubneh@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 21:55:48 by mwubneh           #+#    #+#             */
-/*   Updated: 2023/01/13 23:00:43 by mwubneh          ###   ########.fr       */
+/*   Updated: 2023/01/14 00:14:32 by mwubneh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 
 int	ft_print_char(char c)
 {
-	write(1, &c, 1);
-	return (1);
+	return (write(1, &c, 1));
 }
 
 int	print_cont(char c, va_list arg)
