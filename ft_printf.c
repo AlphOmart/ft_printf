@@ -6,7 +6,7 @@
 /*   By: mwubneh <mwubneh@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 21:55:48 by mwubneh           #+#    #+#             */
-/*   Updated: 2023/01/13 22:34:55 by mwubneh          ###   ########.fr       */
+/*   Updated: 2023/01/13 23:00:43 by mwubneh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int	ft_printf(char *str, ...)
 			len_cont = print_cont(str[i +1], arg);
 			i++;
 		}
+		else
+			len_cont = ft_print_char(str[i]);
 		if (len_cont < 0)
 			return (-1);
 		else
