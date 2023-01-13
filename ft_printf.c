@@ -6,7 +6,7 @@
 /*   By: mwubneh <mwubneh@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 21:55:48 by mwubneh           #+#    #+#             */
-/*   Updated: 2023/01/13 22:29:20 by mwubneh          ###   ########.fr       */
+/*   Updated: 2023/01/13 22:34:55 by mwubneh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	ft_printf(char *str, ...)
 
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
 	ft_printf("%c%c", 'a', 'b');
 	printf("\n");
