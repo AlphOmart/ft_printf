@@ -6,11 +6,23 @@
 /*   By: mwubneh <mwubneh@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 21:55:48 by mwubneh           #+#    #+#             */
-/*   Updated: 2023/01/14 17:15:15 by mwubneh          ###   ########lyon.fr   */
+/*   Updated: 2023/01/14 17:30:20 by mwubneh          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+char	**ft_reverse_base(char *base, int len_base)
+{
+	int		i;
+	char	*new_base;
+
+	new_base = NULL;
+	i = 0;
+	while (len_base)
+		new_base[len_base - i] = base[i];
+	return (*new_base);
+}
 
 int	ft_abs(int nbr)
 {
@@ -38,7 +50,10 @@ int	ft_putnbr_base(int64_t nbr, char *base)
 	len_base = ft_strlen(base);
 	if (nbr < 0)
 	{
-		c += write (1, "-", 1);
+		if (len_base == 10)
+			c += write (1, "-", 1);
+		else if (len_base == 16)
+			*base = ft_reverse_base(base, 16);
 		nbr *= -1;
 	}
 	if (len_base <= nbr)
