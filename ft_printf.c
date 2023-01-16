@@ -6,13 +6,13 @@
 /*   By: mwubneh <mwubneh@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 21:55:48 by mwubneh           #+#    #+#             */
-/*   Updated: 2023/01/16 17:30:20 by mwubneh          ###   ########lyon.fr   */
+/*   Updated: 2023/01/16 18:21:52 by mwubneh          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_cont(char c, va_list arg)
+static int	print_cont(char c, va_list arg)
 {
 	if (c == 's')
 		return (ft_print_str(va_arg(arg, char *)));
@@ -33,7 +33,7 @@ int	print_cont(char c, va_list arg)
 	return (0);
 }
 
-int	val_format(char c)
+static int	val_format(char c)
 {
 	if (c == 'c' || c == '%' || c == 's' || c == 'i' || c == 'd'
 		|| c == 'x' || c == 'X' || c == 'u' || c == 'p')
