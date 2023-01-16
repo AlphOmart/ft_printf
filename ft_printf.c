@@ -6,31 +6,11 @@
 /*   By: mwubneh <mwubneh@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 21:55:48 by mwubneh           #+#    #+#             */
-/*   Updated: 2023/01/16 13:43:27 by mwubneh          ###   ########lyon.fr   */
+/*   Updated: 2023/01/16 14:06:04 by mwubneh          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-char	*ft_reverse_base(char *base, int len_base)
-{
-	int		i;
-	char	*new_base;
-
-	new_base = NULL;
-	i = 0;
-	while (len_base)
-		new_base[i] = base[i + len_base];
-	new_base[i] = '\0';
-	return (new_base);
-}
-
-int	ft_abs(int nbr)
-{
-	if (nbr < 0)
-		return (nbr *= -1);
-	return (nbr);
-}
 
 int	ft_strlen(char	*str)
 {
@@ -53,8 +33,6 @@ int	ft_putnbr_base(int64_t nbr, char *base)
 	{
 		if (len_base == 10)
 			c += write (1, "-", 1);
-		else if (len_base == 16)
-			base = ft_reverse_base(base, 16);
 		nbr *= -1;
 	}
 	if (len_base <= nbr)
@@ -97,11 +75,11 @@ int	print_cont(char c, va_list arg)
 	if (c == 'i' || c == 'd')
 		return (ft_putnbr_base(va_arg(arg, int), "0123456789"));
 	if (c == 'u')
-		return (ft_putnbr_base(ft_abs(va_arg(arg, int)), "0123456879"));
+		return (ft_putnbr_base(va_arg(arg, unsigned int), "0123456879"));
 	if (c == 'x')
-		return (ft_putnbr_base(va_arg(arg, int), "0123456789abcdef"));
+		return (ft_putnbr_base(va_arg(arg, unsigned int), "0123456789abcdef"));
 	if (c == 'X')
-		return (ft_putnbr_base(va_arg(arg, int), "0123456789ABCDEF"));
+		return (ft_putnbr_base(va_arg(arg, unsigned int), "0123456789ABCDEF"));
 	return (0);
 }
 
@@ -139,16 +117,4 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(arg);
 	return (len);
-}
-
-#include <stdio.h>
-
-int main (void)
-{
-	int	c;
-
-	c = -15;
-	ft_printf("%x", c);
-	printf("\n");
-	printf("%x",c);
 }
