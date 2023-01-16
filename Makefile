@@ -3,7 +3,9 @@ CC = cc
 FLAGS = -Wall -Werror -Wextra
 HDRS = printf.h
 
-SRC_PART = ./ft_printf.c
+SRC_PART =	./ft_printf.c\
+			./ft_print_str.c\
+			./ft_print_nbr.c
 
 OBJ_SRC = $(SRC_PART:.c=.o)
 
