@@ -6,7 +6,7 @@
 /*   By: mwubneh <mwubneh@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 16:45:13 by mwubneh           #+#    #+#             */
-/*   Updated: 2023/01/16 18:00:58 by mwubneh          ###   ########lyon.fr   */
+/*   Updated: 2023/01/17 14:25:30 by mwubneh          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-int	ft_print_str(const char	*str)
+size_t	ft_print_str(const char	*str)
 {
 	int	i;
 

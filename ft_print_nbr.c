@@ -6,7 +6,7 @@
 /*   By: mwubneh <mwubneh@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 16:53:01 by mwubneh           #+#    #+#             */
-/*   Updated: 2023/01/17 13:35:03 by mwubneh          ###   ########lyon.fr   */
+/*   Updated: 2023/01/17 14:26:18 by mwubneh          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ size_t	ft_putnbr_hexa(uint64_t nbr, char *base)
 
 	if (nbr == 0)
 		return (ft_print_str("0"));
-	number_str[10 - 1] = '\0';
-	cursor = number_str + 10 - 2;
+	number_str[9] = '\0';
+	cursor = number_str + 8;
 	while (nbr != 0)
 	{
 		*cursor-- = base[nbr % 16];
@@ -59,7 +59,7 @@ int	ft_print_point(va_list arg)
 
 	if (write(1, "0x", 2) == -1)
 		return (-1);
-	ft_putnbr_hexa_return = ft_putnbr_hexa(va_arg(arg, int64_t),
+	ft_putnbr_hexa_return = ft_putnbr_hexa(va_arg(arg, uint64_t),
 			"0123456789abcdef");
 	if (ft_putnbr_hexa_return == (size_t)-1)
 		return (-1);
