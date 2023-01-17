@@ -1,7 +1,20 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mwubneh <mwubneh@student.42lyon.fr>        +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/01/17 13:36:02 by mwubneh           #+#    #+#              #
+#    Updated: 2023/01/17 13:36:04 by mwubneh          ###   ########lyon.fr    #
+#                                                                              #
+# **************************************************************************** #
+
+
 NAME = libftprintf.a
 CC = cc
 FLAGS = -Wall -Werror -Wextra
-HDRS = printf.h
+HDRS = ft_printf.h
 
 SRC_PART =	./ft_printf.c\
 			./ft_print_str.c\
@@ -11,7 +24,7 @@ OBJ_SRC = $(SRC_PART:.c=.o)
 
 all :$(NAME)
 
-$(NAME):	$(OBJ_SRC)
+$(NAME):	$(OBJ_SRC) $(HDRS)
 	ar -rcs $(NAME) $(OBJ_SRC)
 
 %.o : %.c $(HDRS)

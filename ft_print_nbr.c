@@ -6,7 +6,7 @@
 /*   By: mwubneh <mwubneh@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 16:53:01 by mwubneh           #+#    #+#             */
-/*   Updated: 2023/01/17 13:28:32 by mwubneh          ###   ########lyon.fr   */
+/*   Updated: 2023/01/17 13:35:03 by mwubneh          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	ft_print_point(va_list arg)
 		return (-1);
 	ft_putnbr_hexa_return = ft_putnbr_hexa(va_arg(arg, int64_t),
 			"0123456789abcdef");
-	if (ft_putnbr_hexa_return == -1)
+	if (ft_putnbr_hexa_return == (size_t)-1)
 		return (-1);
 	return (ft_putnbr_hexa_return + 2);
 }
