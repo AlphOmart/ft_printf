@@ -6,7 +6,7 @@
 /*   By: mwubneh <mwubneh@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 14:22:24 by mwubneh           #+#    #+#             */
-/*   Updated: 2023/01/16 18:13:38 by mwubneh          ###   ########lyon.fr   */
+/*   Updated: 2023/01/17 13:28:52 by mwubneh          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 # include <unistd.h>
 
 size_t		ft_putnbr(int64_t nbr);
-int		ft_abs(int nbr);
-size_t	ft_strlen(const char *str);
-int		ft_putnbr_p(unsigned long long nbr, char *base);
-int		ft_print_point(va_list arg);
-int		ft_print_str(const char *str);
-int		ft_print_char(char c);
-int		ft_print_cont(char c, va_list arg);
-int		val_format(char c);
-int		ft_printf(const char *str, ...);
+int			ft_abs(int nbr);
+size_t		ft_strlen(const char *str);
+int			ft_print_point(va_list arg);
+int			ft_print_str(const char *str);
+int			ft_print_char(char c);
+static int	ft_print_cont(char c, va_list arg);
+static int	val_format(char c);
+int			ft_printf(const char *str, ...);
+size_t		ft_putnbr_hexa(uint64_t nbr, char *base);
 
 #endif

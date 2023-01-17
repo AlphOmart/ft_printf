@@ -6,7 +6,7 @@
 /*   By: mwubneh <mwubneh@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 21:55:48 by mwubneh           #+#    #+#             */
-/*   Updated: 2023/01/16 18:21:52 by mwubneh          ###   ########lyon.fr   */
+/*   Updated: 2023/01/17 13:17:31 by mwubneh          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ static int	print_cont(char c, va_list arg)
 	if (c == 'i' || c == 'd')
 		return (ft_putnbr(va_arg(arg, int)));
 	if (c == 'u')
-		return (ft_putnbr_p(va_arg(arg, unsigned int), "0123456789"));
+		return (ft_putnbr(va_arg(arg, unsigned int)));
 	if (c == 'p')
 		return (ft_print_point(arg));
 	if (c == 'x')
-		return (ft_putnbr_p(va_arg(arg, unsigned int), "0123456789abcdef"));
+		return (ft_putnbr_hexa(va_arg(arg, unsigned int), "0123456789abcdef"));
 	if (c == 'X')
-		return (ft_putnbr_p(va_arg(arg, unsigned int), "0123456789ABCDEF"));
+		return (ft_putnbr_hexa(va_arg(arg, unsigned int), "0123456789ABCDEF"));
 	return (0);
 }
 
