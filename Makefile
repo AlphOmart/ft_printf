@@ -6,18 +6,18 @@
 #    By: mwubneh <mwubneh@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/17 13:36:02 by mwubneh           #+#    #+#              #
-#    Updated: 2023/01/17 13:36:04 by mwubneh          ###   ########lyon.fr    #
+#    Updated: 2023/01/17 14:54:10 by mwubneh          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = libftprintf.a
 CC = cc
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -g
 HDRS = ft_printf.h
 
-SRC_PART =	./ft_printf.c\
-			./ft_print_str.c\
+SRC_PART =	./ft_printf.c \
+			./ft_print_str.c \
 			./ft_print_nbr.c
 
 OBJ_SRC = $(SRC_PART:.c=.o)

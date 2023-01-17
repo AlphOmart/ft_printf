@@ -6,7 +6,7 @@
 /*   By: mwubneh <mwubneh@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 16:53:01 by mwubneh           #+#    #+#             */
-/*   Updated: 2023/01/17 14:31:54 by mwubneh          ###   ########lyon.fr   */
+/*   Updated: 2023/01/17 14:41:47 by mwubneh          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ size_t	ft_putnbr(int64_t nbr)
 		nbr = -nbr;
 	number_str[11] = '\0';
 	cursor = number_str + 10;
-	while (nbr != 0)
+	while (nbr != 0 && cursor >= number_str)
 	{
 		*cursor-- = nbr % 10 + '0';
 		nbr /= 10;
@@ -36,15 +36,15 @@ size_t	ft_putnbr(int64_t nbr)
 	return (ft_print_str(cursor + 1));
 }
 
-size_t	ft_putnbr_hexa(uint64_t nbr, char *base)
+size_t	ft_putnbr_hexa(uintptr_t nbr, char *base)
 {
-	char	number_str[10];
+	char	number_str[15];
 	char	*cursor;
 
 	if (nbr == 0)
 		return (ft_print_str("0"));
-	number_str[9] = '\0';
-	cursor = number_str + 8;
+	number_str[14] = '\0';
+	cursor = number_str + 13;
 	while (nbr != 0)
 	{
 		*cursor-- = base[nbr % 16];
@@ -59,7 +59,7 @@ int	ft_print_point(va_list arg)
 
 	if (write(1, "0x", 2) == -1)
 		return (-1);
-	ft_putnbr_hexa_return = ft_putnbr_hexa(va_arg(arg, uint64_t),
+	ft_putnbr_hexa_return = ft_putnbr_hexa((uintptr_t) va_arg(arg, void *),
 			"0123456789abcdef");
 	if (ft_putnbr_hexa_return == (size_t)-1)
 		return (-1);
