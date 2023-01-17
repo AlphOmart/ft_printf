@@ -6,7 +6,7 @@
 /*   By: mwubneh <mwubneh@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 16:53:01 by mwubneh           #+#    #+#             */
-/*   Updated: 2023/01/17 14:41:47 by mwubneh          ###   ########lyon.fr   */
+/*   Updated: 2023/01/17 15:51:44 by mwubneh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ size_t	ft_putnbr(int64_t nbr)
 		nbr = -nbr;
 	number_str[11] = '\0';
 	cursor = number_str + 10;
-	while (nbr != 0 && cursor >= number_str)
+	while (nbr != 0)
 	{
 		*cursor-- = nbr % 10 + '0';
 		nbr /= 10;
@@ -36,18 +36,22 @@ size_t	ft_putnbr(int64_t nbr)
 	return (ft_print_str(cursor + 1));
 }
 
+#define SIZE 19
+
 size_t	ft_putnbr_hexa(uintptr_t nbr, char *base)
 {
-	char	number_str[15];
+	char	number_str[SIZE];
 	char	*cursor;
 
 	if (nbr == 0)
 		return (ft_print_str("0"));
-	number_str[14] = '\0';
-	cursor = number_str + 13;
+	number_str[SIZE - 1] = '\0';
+	cursor = number_str + SIZE - 2;
 	while (nbr != 0)
 	{
-		*cursor-- = base[nbr % 16];
+		*cursor = base[nbr % 16];
+		if (cursor > number_str)
+			cursor--;
 		nbr /= 16;
 	}
 	return (ft_print_str(cursor + 1));

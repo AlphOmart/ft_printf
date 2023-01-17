@@ -6,14 +6,14 @@
 #    By: mwubneh <mwubneh@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/17 13:36:02 by mwubneh           #+#    #+#              #
-#    Updated: 2023/01/17 14:54:10 by mwubneh          ###   ########lyon.fr    #
+#    Updated: 2023/01/17 15:52:56 by mwubneh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = libftprintf.a
 CC = cc
-FLAGS = -Wall -Werror -Wextra -g
+FLAGS = -Wall -Werror -Wextra
 HDRS = ft_printf.h
 
 SRC_PART =	./ft_printf.c \
